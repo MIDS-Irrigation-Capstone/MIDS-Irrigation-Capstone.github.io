@@ -1,0 +1,19 @@
+table {
+  font-family:"Courier New", Courier, monospace; font-size:80%;
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 75%
+}
+
+th {
+  background-color: #137752;
+  color: white;
+}
+
+th, td {
+  padding-left: 8px;
+  padding-right: 8px;
+  border: 1px solid black;
+}
