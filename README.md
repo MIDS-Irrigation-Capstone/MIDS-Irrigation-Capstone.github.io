@@ -14,6 +14,7 @@ Download latest version from https://gohugo.io/getting-started/quick-start/
 ### Running Hugo
 
 > cd website
+
 > hugo server
 
 
@@ -21,5 +22,6 @@ Download latest version from https://gohugo.io/getting-started/quick-start/
 
 
 > cd website
+
 > hugo
 
