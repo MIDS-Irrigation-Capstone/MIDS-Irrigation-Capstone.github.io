@@ -1,15 +1,15 @@
 ---
-title: "Baseline"
+title: "Baseline Models"
 description: "Classifying Irrigated Land with Supervised Models"
 featured_image: "/images/migration-baseline-measures.jpg"
 <!-- toc: true -->
 ---
 
-Some words about what the supervised baseline is...
+Classical supervised training using BigEarthNet data with and without pre-trained ImageNet weights.
 
 ### Experiment 1
 
-Supervised model with various splits of labeled data. Used only the "permanently irrigated" label for classification.
+Supervised model with various splits of labeled data. For the first set of experiments we used only the "permanently irrigated" label for classification, which is only a small fraction of the dataset at roughly 2.3%. We explore models commonly trained with the ImageNet dataset, and several ResNet models of different sizes, on ever diminishing splits of our labeled dataset.
 
 **Table 1: Accuracy score vs. percent labeled and architecture**
 
@@ -27,7 +27,7 @@ Supervised model with various splits of labeled data. Used only the "permanently
 
 ### Experiment 2
 
-Supervised model with various splits of labeled data. Used the "permanently irrigated" in addition to Vineyards, Rice fields, fruit orchards and olive groves.
+Supervised model with various splits of labeled data. In Addition to the "permanently irrigated" we also include Vineyards, Rice fields, fruit orchards and olive groves, which now represents approxiamtely 6.24% of the dataset.
 
 **Table 1: Accuracy score vs. percent labeled and architecture**
 
