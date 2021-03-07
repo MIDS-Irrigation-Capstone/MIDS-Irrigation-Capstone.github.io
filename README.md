@@ -4,7 +4,7 @@
 
 ### Clone Repo - with submodules
 
-eg: git clone --recurse-submodules  https://github.com/MIDS-Irrigation-Capstone/website.git
+> git clone --recurse-submodules  https://github.com/MIDS-Irrigation-Capstone/website.git
 
 
 ### Install GoHugo
