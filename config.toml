@@ -1,5 +1,5 @@
 title = "Self-supervised Learning for Irrigation Detection"
-baseURL = "https://mids-irrigation-capstone.github.io/website"
+baseURL = "https://mids-irrigation-capstone.github.io"
 languageCode = "en-us"
 theme = "ananke"
 
