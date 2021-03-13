@@ -1,4 +1,4 @@
-# Capstone Project Repo for [Website](https://mids-irrigation-capstone.github.io/website/)
+# Capstone Project Repo for [Website](https://mids-irrigation-capstone.github.io/)
 
 ## Getting Started
 
