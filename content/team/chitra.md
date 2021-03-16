@@ -5,4 +5,5 @@ team-github: "https://github.com/chitraagastya"
 team-linkedin: "linkedin.com/in/chitraagastya"
 ---
 
-Chitra does stuff
+Data Scientist,
+Operations Manager
