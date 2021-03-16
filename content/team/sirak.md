@@ -5,4 +5,5 @@ team-github: "https://github.com/sirakzg"
 team-linkedin: "https://www.linkedin.com/in/sirak"
 ---
 
-Sirak does stuff
+Data Scientist,
+Modeling Specialist

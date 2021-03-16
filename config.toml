@@ -28,6 +28,4 @@ googleAnalytics = ""
   cover_dimming_class="bg-black-10"
   recent_posts_number = 3
   custom_css = ["/css/main.css"]
-  mainSections = ["models", "results"]
-
-
+  mainSections = ["data", "models", "results"]
