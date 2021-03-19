@@ -17,3 +17,14 @@ th, td {
   padding-right: 8px;
   border: 1px solid black;
 }
+
+img[alt=bens21] {
+  width: 40% ;
+  float : right;
+  margin-left: 15px;
+}
+
+img[alt=cvCal] {
+  width: 20% ;
+  float : right;
+}
