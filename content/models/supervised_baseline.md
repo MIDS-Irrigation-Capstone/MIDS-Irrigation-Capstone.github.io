@@ -2,10 +2,16 @@
 title: "Baseline Models"
 description: "Classifying Irrigated Land with Supervised Models"
 featured_image: "/images/migration-baseline-measures.jpg"
-<!-- toc: true -->
+summary: The goal of this project is to identify if self-supervised learning is a viable option when training on satellite imagery with limited access to labeled data. Our baseline models are trained on a variety of neural network architectures and fractions of labeled data to quantify the performance impact as our fraction of labeled data changes. We will used the results of our baseline models to assess the performance of our self-supervised models with the constraints.
 ---
 
-Classical supervised training using BigEarthNet data with and without pre-trained ImageNet weights.
+- [Experiment 1: Train on permanently irrigated label]({{<ref "#experiment-1" >}})
+- [Experiment 2: Train on and extended set of labels]({{<ref "#experiment-2" >}})
+- [Experiment 3: Train on permanently irrigated labels with ImageNet weights]({{<ref "#experiment-3" >}})
+- [Experiment 4: Train on extended labels with ImageNet weights]({{<ref "#experiment-4" >}})
+
+
+The goal of this project is to identify if self-supervised learning is a viable option when training on satellite imagery with limited access to labeled data. Our baseline models are trained on a variety of neural network architectures and fractions of labeled data to quantify the performance impact as our fraction of labeled data changes. We will used the results of our baseline models to assess the performance of our self-supervised models with the constraints.
 
 ### Experiment 1
 
