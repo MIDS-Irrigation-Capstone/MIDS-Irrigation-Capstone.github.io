@@ -1,6 +1,7 @@
 ---
-title: "Irrigation Detection in Satellite Imagery"
-description: "Leveraging self-supervised techniques to detect irrigated land."
+title: "SimCLR-S2"
+description: "Leveraging self-supervised techniques based on SimCLR to detect irrigated land in S2 satellite images"
+recent_copy: Recent Updates
 ---
 
-Leveraging large unlabeled datasets as been a challenge for the computer vision community up until recent advances were made with SimCLR, MoCo and Facebooks SEER models. For this Captsone project we implement the SOTA SimCLRv2 methodology of training a large computer vision model to later be utilized in the fine-tuning task of detecting irrigated patches of land from satellite images.
+The methods presented in [SimCLR](https://arxiv.org/abs/2002.05709) and [SimCLRv2](https://arxiv.org/abs/2006.10029) demonstrated great success in training computer vision models at classification tasks. The focus of this project is to determine if the same techniques can be applied to multi-spectral satellite imagery with similar success.

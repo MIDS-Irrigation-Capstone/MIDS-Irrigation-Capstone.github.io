@@ -1,4 +1,4 @@
-title = "Self-supervised Learning for Irrigation Detection"
+title = "SimCLR-S2"
 baseURL = "https://mids-irrigation-capstone.github.io"
 languageCode = "en-us"
 theme = "ananke"
@@ -9,7 +9,7 @@ googleAnalytics = ""
 
 [params]
   favicon = ""
-  site_logo = "/images/logo.png"
+  # site_logo = "/images/logo.png"
   description = "W210 Capstone Project - UC Berkeley"
   facebook = ""
   twitter = ""
