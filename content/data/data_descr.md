@@ -1,7 +1,7 @@
 ---
 title: "Data"
 featured_image: "/images/sentinel2_france_1920.jpg"
-<!-- toc: true -->
+summary: "Multiple Sentinel-2 data sources were leveraged during the course of this project. BigEarthNet was the primary focus since the large number of images and labels was useful for training both our supervised an unsupervised models with varying degrees of labeled data. Here will explore the data set in detail."
 ---
 
 The data for our research are Sentinel-2 multispectral images of earth's surface reflectance sourced from two archives: BigEarthNet-S2 and Sentinel-2A collection from the Copernicus program. While the former is an annotated  dataset that we use for fine-tuning of our models using supervised learning, the latter is an unlabeled dataset we leverage for pre-training.
