@@ -5,5 +5,6 @@ team-github: "https://github.com/chitraagastya"
 team-linkedin: "linkedin.com/in/chitraagastya"
 ---
 
-Data Scientist,
+Data Scientist
 Operations Manager
+Web Designer

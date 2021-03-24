@@ -13,7 +13,7 @@ summary: The goal of this project is to identify if self-supervised learning is 
 
 The goal of this project is to identify if self-supervised learning is a viable option when training on satellite imagery with limited access to labeled data. Our baseline models are trained on a variety of neural network architectures and fractions of labeled data to quantify the performance impact as our fraction of labeled data changes. We will used the results of our baseline models to assess the performance of our self-supervised models with the constraints.
 
-### Experiment 1
+## Experiment 1
 
 Supervised model with various splits of labeled data. For the first set of experiments we used only the "permanently irrigated" label for classification, which is only a small fraction of the dataset at roughly 2.3%. We explore models commonly trained with the ImageNet dataset, and several ResNet models of different sizes, on ever diminishing splits of our labeled dataset.
 
@@ -31,7 +31,7 @@ Supervised model with various splits of labeled data. For the first set of exper
 
 ![](/images/supervised_baseline.png)
 
-### Experiment 2
+## Experiment 2
 
 Supervised model with various splits of labeled data. In Addition to the "permanently irrigated" we also include Vineyards, Rice fields, fruit orchards and olive groves, which now represents approxiamtely 6.24% of the dataset.
 
@@ -49,7 +49,7 @@ Supervised model with various splits of labeled data. In Addition to the "perman
 
 ![](/images/supervised_baseline_ex.png)
 
-### Experiment 3
+## Experiment 3
 
 Supervised model with various splits of labeled data. Used only the "permanently irrigated" label for classification but trained only on the RGB channels using ImageNet weights.
 
@@ -67,7 +67,7 @@ Supervised model with various splits of labeled data. Used only the "permanently
 
 ![](/images/supervised_baseline_pretrained.png)
 
-### Experiment 4
+## Experiment 4
 
 Supervised model with various splits of labeled data. Used extened labels (permanently irrigated, Vineyards, Rice fields, fruit orchards and olive groves) for classification but trained only on the RGB channels using ImageNet weights.
 

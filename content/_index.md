@@ -1,6 +1,6 @@
 ---
 title: "SimCLR-S2"
-description: "Leveraging self-supervised techniques based on SimCLR to detect irrigated land in S2 satellite images"
+description: "Leveraging self-supervised techniques based on SimCLR to detect irrigated land in Sentinel-2 satellite images"
 recent_copy: Recent Updates
 ---
 

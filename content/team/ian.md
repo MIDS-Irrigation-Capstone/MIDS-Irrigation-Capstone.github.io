@@ -5,5 +5,6 @@ team-linkedin: "https://www.linkedin.com/in/imander"
 team-github: "https://github.com/imander"
 ---
 
-Data Scientist,
-Data Evangelist
+Data Scientist
+Data Engineer
+Web Designer
