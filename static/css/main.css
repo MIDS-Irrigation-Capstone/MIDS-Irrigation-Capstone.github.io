@@ -25,6 +25,13 @@ img[alt=bens21] {
 }
 
 img[alt=cvCal] {
-  width: 20% ;
-  float : right;
+  width: 23% ;
+  float : left;
+  margin-right: 15px;
+}
+
+img[alt=bands]{
+  width: 75% ;
+  margin-left: auto;
+  margin-right: auto;
 }
