@@ -19,15 +19,15 @@ th, td {
 }
 
 img[alt=bens21] {
-  width: 40% ;
-  float : right;
-  margin-left: 15px;
+  width: 75% ;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img[alt=cvCal] {
-  width: 23% ;
-  float : left;
-  margin-right: 15px;
+  width: 75% ;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img[alt=bands]{

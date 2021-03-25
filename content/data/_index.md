@@ -26,7 +26,7 @@ Sentinel-2 is an earth observation mission from the European Space Agency. It ac
 [S2 Super-resolution](https://up42.com/blog/tech/sentinel-2-superresolution) algorithm creates a 10 m resolution band for all the existing spectral bands (including those with 20 m and 60 m) using a trained convolutional neural network (CNN). This processing block's output is a multispectral 12 band, 10 m resolution GeoTIFF file. The first band i.e. B1 is discarded since it's only useful for atmospheric correction.
 
 
-![cvCal](/images/ca2.png)
+![cvCal](/images/ca12.png)
 
 We source Sentinel-2A images of the [Central Valley](https://en.wikipedia.org/wiki/Central_Valley_(California)) region of California using the Google Earth Engine API. Central valley is not only California’s most productive agricultural region, but also one of the most productive regions in the world. According to Wikipedia, more than 7 million acres of the valley are irrigated via an extensive system of canals and reservoirs. The valley is also home to many major cities like Sacrameto, Fresno, Bakersfield etc. giving us a good mix of irrigated and non-irrigiated data. We use images covering approximately 5000 sqaure miles of area for our self supervised learning.
 
