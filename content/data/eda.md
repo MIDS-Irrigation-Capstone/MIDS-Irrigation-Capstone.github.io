@@ -1,5 +1,6 @@
 ---
 title: "Exploratory Analysis"
+description : "Exploratory Data Analysis of BigEarthNet-S2 data"
 featured_image: "/images/sentinel2_france_1920.jpg"
 summary: "An exploratory analysis on the data to understand the distributions for irrigated data as well as identify additional features that can help with irrigation detection."
 layout: single
