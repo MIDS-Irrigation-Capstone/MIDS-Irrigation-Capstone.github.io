@@ -1,0 +1,16 @@
+{{ define "main" }}
+    <section class="nested-copy-line-height cf ph3 ph5-l pv3 pv4-l f4 lh-copy center w-60 mid-gray">
+      {{ .Content }}
+    </section>
+  {{ if ge .Paginator.Pages 1 }}
+    <div class="pa3 pa4-ns w-100 w-70-ns center">
+      <section class="w-100 mw8 center">
+        {{ range .Paginator.Pages }}
+          <div class="relative w-100 mb4">
+            {{ partial "summary-with-image.html" . }}
+          </div>
+        {{ end }}
+      </section>
+    </div>
+  {{ end }}
+{{ end }}
