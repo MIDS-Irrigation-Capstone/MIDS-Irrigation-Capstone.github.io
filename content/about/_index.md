@@ -21,9 +21,9 @@ Historically, monitoring water usage has been a largely manual process which is 
 
 The core methodology of our training will leverage contrastive learning to generate a self-supervised model. While typical machine learning models leverage labeled data to identify features that are associated with a label, contrastive learning aims to identify similarities. The basic approach used to train a computer vision model is to apply augmentations to an image and apply a loss function that will minimize the distance between images of the positive class and all other images.
 
-The basic process is to apply random augmentations such as crop, blur, rotation, etc. to a batch of N images which results in a training data set of 2N images. Each image in the training set has a corresponding augmented image and which is referred to as the "positive" class. All other images in the training corpus are part of the "negative" class. As our model learns it will attempt to "attract" the positive class and "repel" the negative class which will ultimately generate a model that maximizes distance between positive and negative classes. The following function describes how the loss is calculated.
+The basic process is to apply random augmentations such as crop, blur, rotation, etc. to a batch of N images which results in a training data set of 2N images. Each image in the training set has a corresponding augmented image and which is referred to as the "positive" class. All other images in the training corpus are part of the "negative" class. As our model learns it will attempt to "attract" the positive class and "repel" the negative class which will ultimately generate a model that maximizes distance between positive and negative classes. The following equation describes how the loss is calculated.
 
-`$l_{i,j} = -{log} \frac{exp(sim(z_i,z_j)/\tau)}{\sum_{k=1}^{2N}1_{k \ne i} exp(sim(z_i,z_j)/\tau))}$`
+`$$l_{i,j} = -{log} \frac{exp(sim(z_i,z_j)/\tau)}{\sum_{k=1}^{2N}1_{k \ne i} exp(sim(z_i,z_j)/\tau))}$$`
 
 
 ![contrastive-learning](/images/contrastive-learning.gif)
