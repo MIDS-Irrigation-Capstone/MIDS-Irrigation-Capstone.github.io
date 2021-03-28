@@ -5,6 +5,6 @@ team-linkedin: "https://www.linkedin.com/in/imander"
 team-github: "https://github.com/imander"
 ---
 
-Data Scientist
-Data Engineer
-Web Designer
+- Data Scientist
+- Data Engineer
+- Web Designer

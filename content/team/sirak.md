@@ -5,6 +5,6 @@ team-github: "https://github.com/sirakzg"
 team-linkedin: "https://www.linkedin.com/in/sirak"
 ---
 
-Data Scientist
-Modeling Specialist
-Web Designer
+- Data Scientist
+- Modeling Specialist
+- Web Designer
