@@ -1,6 +1,7 @@
 ---
 title: "Data Sources"
-featured_image: "/images/sentinel2.png"
+summary_image: "/images/sentinel2.png"
+featured_image: "/images/satellite-imaging.jpg"
 summary: "The data for our research are Sentinel-2 multispectral images of earth's surface reflectance sourced from two archives: BigEarthNet-S2 and Sentinel-2A collection from the Copernicus program."
 layout: single
 recent_copy: Recent Updates
