@@ -2,23 +2,42 @@
 title: "Baseline Models"
 description: "Classifying Irrigated Land with Supervised Models"
 featured_image: "/images/migration-baseline-measures.jpg"
+toc: true
 summary: The goal of this project is to identify if self-supervised learning is a viable option when training on satellite imagery with limited access to labeled data. Our baseline models are trained on a variety of neural network architectures and fractions of labeled data to quantify the performance impact as our fraction of labeled data changes. We will used the results of our baseline models to assess the performance of our self-supervised models with the constraints.
 ---
 
-- [Experiment 1: Train on permanently irrigated label]({{<ref "#experiment-1" >}})
-- [Experiment 2: Train on and extended set of labels]({{<ref "#experiment-2" >}})
-- [Experiment 3: Train on permanently irrigated labels with ImageNet weights]({{<ref "#experiment-3" >}})
-- [Experiment 4: Train on extended labels with ImageNet weights]({{<ref "#experiment-4" >}})
+## Overview
+
+The goal of this project is to identify if self-supervised learning is a viable option when training on satellite imagery with limited access to labeled data. Our baseline models are trained on a variety of neural network architectures and fractions of labeled data to quantify the performance impact as our fraction of labeled data changes. We will use the results of the baseline models to assess the performance of our self-supervised models with the same labeling constraints.
+
+Before diving into the models it is important to understand how the "irrigated" label was determined. Using the big earth net labels we identified two different methods that could be used to identify if land was irrigated or not. In our experiments we will refer to these methods as regular labels, or expanded labels (described below).
+
+- **Regular Labels:** Regular labels takes the "permanently irrigated" label from big earth net data and uses that as the ground truth for classification. All images that do not include this label are considered not irrigated.
+- **Expanded Labels:** When analysing the big earthnet labels it appears that there were some labels that corresponded to croplands which would imply irrigation. We used these additional labels to expand what the definition of irrigated is to include the following: Fruit trees and berry plantations, rice fields, vineyards, olive groves, and permanently irrigated.
+
+In addition to the different labeling methods models were also trained in two ways; full training or ImageNet pretraining. The full training experiminets train a model from scratch using various fractions of labeled data while the ImageNet pretraining starts off the training with pretrained weights from an ImageNet model. It is important to not that models trained with ImageNet weights are only trained on RGB channels while training from scratch utilizes all channels in available.
 
 
-The goal of this project is to identify if self-supervised learning is a viable option when training on satellite imagery with limited access to labeled data. Our baseline models are trained on a variety of neural network architectures and fractions of labeled data to quantify the performance impact as our fraction of labeled data changes. We will used the results of our baseline models to assess the performance of our self-supervised models with the constraints.
+Baseline models were trained on the following architectures.
 
-## Experiment 1
+- InceptionV3
+- ResNet101V2
+- ResNet152
+- ResNet50
+- Xception
+
+
+## Full training
+
+The following models were trained from scratch on the various architectures and labeling methods.
+
+### Regular Labels
 
 Supervised model with various splits of labeled data. For the first set of experiments we used only the "permanently irrigated" label for classification, which is only a small fraction of the dataset at roughly 2.3%. We explore models commonly trained with the ImageNet dataset, and several ResNet models of different sizes, on ever diminishing splits of our labeled dataset.
 
 **Table 1: Accuracy score vs. percent labeled and architecture**
 
+{{< table caption="**Table 1:** *Accuracy versus data splits for full model with regular labels*">}}
 |Split|InceptionV3|ResNet101V2|ResNet152|ResNet50|Xception|
 |-|:---------:|:---------:|:-------:|:------:|:------:|
 |100%|0.93925|0.93450|0.915600|0.93275|**0.93975**|
@@ -27,11 +46,11 @@ Supervised model with various splits of labeled data. For the first set of exper
 |10%|0.78500|**0.89825**|0.885581|0.82050|0.89625|
 |3%|**0.85025**|0.83450|0.811024|0.77100|0.65925|
 |1%|0.56800|0.52425|**0.777067**|0.52225|0.49975|
+{{< /table >}}
 
+{{< figure src="/images/supervised_baseline.png" caption="**Figure 1:** *Accuracy versus data splits for full model with regular labels*" >}}
 
-![](/images/supervised_baseline.png)
-
-## Experiment 2
+### Expanded Labels
 
 Supervised model with various splits of labeled data. In Addition to the "permanently irrigated" we also include Vineyards, Rice fields, fruit orchards and olive groves, which now represents approxiamtely 6.24% of the dataset.
 
@@ -49,8 +68,9 @@ Supervised model with various splits of labeled data. In Addition to the "perman
 
 ![](/images/supervised_baseline_ex.png)
 
-## Experiment 3
+## ImageNet Pretraining
 
+### Regular Labels
 Supervised model with various splits of labeled data. Used only the "permanently irrigated" label for classification but trained only on the RGB channels using ImageNet weights.
 
 **Table 1: Accuracy score vs. percent labeled and architecture**
@@ -67,7 +87,7 @@ Supervised model with various splits of labeled data. Used only the "permanently
 
 ![](/images/supervised_baseline_pretrained.png)
 
-## Experiment 4
+### Expanded Labels
 
 Supervised model with various splits of labeled data. Used extened labels (permanently irrigated, Vineyards, Rice fields, fruit orchards and olive groves) for classification but trained only on the RGB channels using ImageNet weights.
 

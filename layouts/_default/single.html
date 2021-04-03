@@ -17,6 +17,12 @@
       <h1 class="f1 athelas mt3 mb1">
         {{- .Title -}}
       </h1>
+      {{- if .Params.toc -}}
+        <div class="pa3 toc nested-links w-90">
+          <p class="f5 b mb3">Contents</p>
+            {{ .TableOfContents }}
+        </div>
+      {{- end -}}
       {{ with .Params.author }}
       <p class="tracked">
           By <strong>

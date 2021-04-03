@@ -2,16 +2,9 @@
 title: "About"
 description: "Motivation and SimCLR Background"
 layout: single
+toc: true
 featured_image: "/images/about.jpg"
 ---
-
-- [Purpose]({{<ref "#purpose" >}})
-- [Contrastive Learning]({{<ref "#contrastive-learning" >}})
-- [SimCLR Framework]({{<ref "#simclr-framework" >}})
-    - [Unsupervised Pretraining]({{<ref "#unsupervised-pretraining" >}})
-    - [Supervised Fine-Tuning]({{<ref "#supervised-fine-tuning" >}})
-    - [Distillation]({{<ref "#distillation" >}})
-- [Why SimCLR-S2]({{<ref "#why-simclr-s2" >}})
 
 ## Purpose
 
