@@ -53,3 +53,15 @@ code.has-jax {
   background: inherit !important;
   border: none !important;
 }
+
+.toc ul,
+.toc ol {
+  margin-top: 1em;
+  display: list-item; list-style: none
+}
+
+table caption {
+  caption-side: bottom;
+  text-align: left;
+  margin-top: 1em;
+}
