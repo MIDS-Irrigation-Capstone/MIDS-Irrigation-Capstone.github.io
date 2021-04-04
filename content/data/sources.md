@@ -33,6 +33,6 @@ We source Sentinel-2A images of the [Central Valley](https://en.wikipedia.org/wi
 
 Before we feed our data into our models, we convert them into TFRecords so that our models can read the pixel values of our images via Tensors.
 
-{{< figure src="/images/preprocessing.png" class="center w-80" caption="**Figure 5:** *Preprocessing on out data*" >}}
+{{< figure src="/images/preprocessing.png" class="center w-80" caption="**Figure 5:** *Preprocessing pipeline to convert raw Sentinel-2 images into tfrecords files*" >}}
 
 We additionally calculate the mean and standard deviation for each band across the Sentinel-2 California dataset, and use the provided statistics for the BigEarthNet dataset. Applying this normalization step adds the advantage of bringing the bands' data ranges closer together and allows us to perform image augmentations across the whole image rather than having to apply unique or custom augmentations per channel.
