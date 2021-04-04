@@ -8,9 +8,9 @@ featured_image: "/images/about.jpg"
 
 ## Purpose
 
-As the global population grows so too does agricultural demand. This increase in demand must be monitored carefully since agricultural production relies on the ability to deliver water to croplands. In the case for California, more than nine million acres of farmland, representing roughly 80% of all water used for businesses and homes. Being able to accurately measure our current and anticipated water needs is critical to ensure that water resources are allocated appropriately to meet basic needs.
+As the global population grows, so does agricultural demand. The increase in demand must be monitored carefully since agricultural production relies on delivering water to croplands. In California, for example, more than nine million acres of farmland are irrigated, which represents roughly 80% of all water used for businesses and homes. Accurately measuring current and anticipated water needs is critical to ensure that water resources are allocated appropriately.
 
-Historically, monitoring water usage has been a largely manual process which is slow and expensive. As technology has evolved we now see ourselves in a situation where we can leverage satellite imagery and computer vision techniques to classify areas of land that are associated with agriculture and irrigation infrastructure. While automation has certainly increased the velocity at which irrigation patterns can be monitored, it still has a highly manual aspect which is a need for labeled data. The aim of this project is to leverage new capabilities in the computer vision space to classify the presence of irrigation in satellite images with a minimal amount of labeled data.
+Historically, monitoring water usage has been a slow and expensive manual process. As technology has evolved, we see ourselves in a situation where we can leverage satellite imagery and computer vision techniques to classify land areas associated with agriculture and irrigation infrastructure. This technology has undoubtedly increased the velocity at which we can monitor irrigation patterns, but the need for labeled data requires manual effort and is a bottleneck. This project aims to leverage new capabilities in the computer vision space to classify irrigation in satellite images with a minimal amount of labeled data.
 
 
 ## Contrastive Learning
