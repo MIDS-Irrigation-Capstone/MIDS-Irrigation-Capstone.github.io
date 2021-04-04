@@ -3,8 +3,7 @@ title: "Exploratory Analysis"
 description : "Exploratory Data Analysis of BigEarthNet-S2 data"
 featured_image: "/images/sentinel2_france_1920.jpg"
 summary: "An exploratory analysis on the data to understand the distributions for irrigated data as well as identify additional features that can help with irrigation detection."
-layout: single
-recent_copy: Recent Updates
+toc: true
 ---
 
 We perform an exploratory analysis on our data to get better insights into understanding the distributions for irrigated land in our labeled data set and identifying potential features that might enhance our ability to distinguish between permanently irrigated land from those that are not. We also explore pre-processing techniques that will help our models learn better from the data and analyze image augmentations that are more suited to satellite images in the context of irrigation detection
@@ -67,10 +66,10 @@ These vegetation and water canopy indices are often highly correlated with one a
 
 {{< figure src="/images/cor-mat.png" caption="**Figure 8:** *Correlation matrix of vegetation and water canopy indices*" >}}
 
-## Preprocessing of dataset
+## Preprocessing of Dataset
 
 blah blah ...
 
-## Image augmentations
+## Image Augmentations
 
 blah ...

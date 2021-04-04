@@ -1,6 +1,6 @@
 ---
 date: 2021-04-04
-title: "SimCLR Model"
+title: "SimCLR Models"
 description: "Self-Supervised Learning"
 featured_image: "/images/farmland-simclr.jpg"
 summary_image: "/images/computer-vision.jpg"

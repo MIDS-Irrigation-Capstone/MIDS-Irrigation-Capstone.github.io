@@ -3,6 +3,7 @@ title: "Data Sources"
 summary_image: "/images/sentinel2.png"
 featured_image: "/images/satellite-imaging.jpg"
 summary: "The data for our research are Sentinel-2 multispectral images of earth's surface reflectance sourced from two archives: BigEarthNet-S2 and Sentinel-2A collection from the Copernicus program."
+toc: true
 ---
 
 The data for our research are Sentinel-2 multispectral images of earth's surface reflectance sourced from two archives: BigEarthNet-S2 and Sentinel-2A collection from the Copernicus program. While the former is an annotated  dataset that we use for fine-tuning of our models using supervised learning, the latter is an unlabeled dataset we leverage for pre-training.
