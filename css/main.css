@@ -18,36 +18,6 @@ th, td {
   border: 1px solid black;
 }
 
-img[alt=bens21] {
-  width: 60% ;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-img[alt=cvCal] {
-  width: 75% ;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-img[alt=bands]{
-  width: 75% ;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-img[alt=dataprocess]{
-  width: 75% ;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-img[alt=stats]{
-  width: 80% ;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 code.has-jax {
   -webkit-font-smoothing: antialiased;
   background: inherit !important;
