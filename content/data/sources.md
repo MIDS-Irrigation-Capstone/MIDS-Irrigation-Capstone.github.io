@@ -14,7 +14,7 @@ The data for our research are Sentinel-2 multispectral images of earth's surface
 
 {{< figure src="/images/ben-s21.png" class="center w-70" caption="**Figure 2:** *Sample images with labels from BigEarthNet-S2*" >}}
 
-[BigEarthNet-S2](http://http://bigearth.net/) is a large scale sentinel benchmark archive consisting of 125 Sentinel-2 tiles, atmospherically corrected and divided into 590,326 non-overlapping image patches. They cover over 10 European countries with each patch annotated by multiple land cover classes that were provided by the [CORINE Land Cover database](https://land.copernicus.eu/user-corner/technical-library/corine-land-cover-nomenclature-guidelines/html)
+[BigEarthNet-S2](http://bigearth.net/) is a large scale sentinel benchmark archive consisting of 125 Sentinel-2 tiles, atmospherically corrected and divided into 590,326 non-overlapping image patches. They cover over 10 European countries with each patch annotated by multiple land cover classes that were provided by the [CORINE Land Cover database](https://land.copernicus.eu/user-corner/technical-library/corine-land-cover-nomenclature-guidelines/html)
 
 
 ## Sentinel-2A

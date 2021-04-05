@@ -30,7 +30,7 @@ EVI is an optimized vegetation index designed to enhance the vegetation signal w
 
 $$ EVI= \frac{2.5 \times (NIR−Red)}{NIR+ (2.4 \times Red) +1} $$
 
-{{< figure src="/images/evi-beda.png" caption="**Figure 4:** *EVI for irrigated samples from BigEarthNet data*" >}}
+{{< figure src="/images/evi-beda.png" caption="**Figure 4:** *Visual bands (top) and EVI (bottom) for irrigated samples from BigEarthNet data*" >}}
 
 ### Soil Adjusted Vegetation Index (SAVI)
 Normalized Differential Vegetative Index (NDVI) is sensitive to the effects of soil and atmosphere. SAVI is an adjusted form of widely used NDVI, developed to minimize the influence of soil brightness on spectral vegetation indices, particularly in areas of high soil composition. A soil adjustment factor *L* is added to the equation of *NDVI* to correct for soil noise effect like soil color, soil moisture etc.
@@ -66,10 +66,36 @@ These vegetation and water canopy indices are often highly correlated with one a
 
 {{< figure src="/images/cor-mat.png" caption="**Figure 8:** *Correlation matrix of vegetation and water canopy indices*" >}}
 
-## Preprocessing of Dataset
+## Image Pre-processing
 
-blah blah ...
+We observe that standardizing images increases the ability to distinguish features that are typically closer together. The below images and histograms are an attempt to visualize what this process does to image readability by adjusting the levels of the image pixels. In this example, we have standardized the pixels by computing the mean and standard deviation of a specific band 8 image from BigEarthNet-S2 dataset: `S2A_MSIL2A_20170613T101031_29_89_B08.tif`. The  pre-processing improves the readability, as evidenced by the image and its histogram, on the right.
 
-## Image Augmentations
+{{< figure src="/images/eda1.png" caption="**Figure 9:** *Effect of standardizing images on a band 8 image. Original image (left), Standardized Image (right)*" >}}
 
-blah ...
+For our experiments, however, we used the mean and the standard deviation computed for each band, by dataset, to scale down the scores to a common range. While we calculated the mean and the standard deviations for images that formed our California dataset, we used the provided statistics for BigEarthNet-S2.
+
+## Image Augmentation
+
+Image augmentation is a salient feature of the SimCLR pretrain step, where every raw image in a batch is subject to two transformations before we compute the similarity between these transformed images in the batch. During the exploratory analysis, we experimented with 9 different augmentation techniques to determine which ones would be most effective on Sentinel-2 images, given that we have 10 channels per image. We studied the following augmentations: rotate, flip, zoom, shift, blur, brightness, gain, contrast and speckle. The effect of some of these per pixel transformations are discussed below.
+
+### Brightness
+
+The brightness of an image can be augmented either darkening or brightening the images, or both. This type of transformation allows a model to generalize across images trained on different lighting levels. Brightness is an additive operation and shifts the image pixel values to the left or right.
+
+{{< figure src="/images/aug-brightness.png" caption="**Figure 10:** *Histogram showing effects of brightness adjustment causing the scale to shift to the right in this example*" >}}
+
+### Contrast
+
+Contrast is adjusted independently for each channel of the image. For a contrast factor $cf$, this operation computes the mean of the image pixels in the channel and then adjusts each component x of each pixel to $(x - mean) * cf + mean$.
+Contrast adjustment analyzes the distribution of pixel densities in an image and then rescales the image to include all intensities that fall within a given range of intensities. For e.g. the 5th and 95th percentiles, as evidenced in image below.
+
+{{< figure src="/images/aug-contrast.png" caption="**Figure 11:** *Histogram showing effects of contrast adjustment, with factor 0.5, causing the counts to move closer to the mean.*" >}}
+
+### Gamma or Gain
+Every pixel in an image has a brightness level called luminance. This value ranges between 0 and 1 where 0 indicates complete darkness and 1 indicates fully bright. Different sensors and video devices capture luminance differently and therefore a correction is applied using the formula $Out = gain * In**gamma$ where $In$ is the original pixel value, $Out$ is the output pixel value and $gamma$ is correction factor and $gain$ is a scalar multiplier. Gamma operation is not symmetric about the mean as evidenced in the *figure 12* below
+
+{{< figure src="/images/aug-gamma.png" caption="**Figure 12:** *Effects of gamma adjustment causing the mean to shift to the left in this example*" >}}
+
+Gamma factor less than 1 causes an image to be darker while a value greater than 1 causes an image to be brighter, as demonstrated by the images below.
+
+{{< figure src="/images/gamma_eg.png" caption="**Figure 12:** *Effects of gamma factor on brightness of an image*" >}}
