@@ -1,6 +1,6 @@
 ---
 date: 2021-04-04
-title: "SimCLR-S2 Pretraining"
+title: "SimCLR-S2 Stage 1: Pretraining"
 description: "Self-Supervised Learning"
 featured_image: "/images/farmland-simclr.jpg"
 summary_image: "/images/training-wheels.jpg"
