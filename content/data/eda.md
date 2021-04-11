@@ -1,4 +1,5 @@
 ---
+date: 2021-04-01
 title: "Exploratory Analysis"
 description : "Exploratory Data Analysis of BigEarthNet-S2 data"
 featured_image: "/images/sentinel2_france_1920.jpg"

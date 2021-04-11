@@ -26,6 +26,6 @@ googleAnalytics = ""
   background_color_class = "bg-dark-green"
   featured_image = "/images/crop.jpg"
   cover_dimming_class="bg-black-10"
-  recent_posts_number = 10
+  recent_posts_number = 2
   custom_css = ["/css/main.css"]
   mainSections = ["data", "models", "results"]
