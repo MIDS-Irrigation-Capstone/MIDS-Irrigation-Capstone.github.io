@@ -34,6 +34,8 @@ The last and final step in our SimCLR-S2 paradigm is the process of distillation
 
 {{< figure src="/images/distill_perf.png" caption="**Figure 3:** *Comparison of SimCLR-S2 distillation performance scores with baseline scores*" >}}
 
+## Other Observations
+
 A distribution of our performance scores across all  of  our models  showed  that  the SimCLR-S2 models brought the f1, accuracy and AUC  scores closer  together  across  different  data sizes  and  CNN  architectures.   The  variability  of these  scores  were  much  higher  with  supervised learning. All of our SimCLR-S2 models had an AUC score higher than 0.72, independent of training data or model sizes.  The mean AUC score across all SimCLR-S2  models  was  around  0.83  indicating that SimCLR-S2 models were effective in detecting permanently irrigated land.   Supervised  learning  on  the other  hand,  had  models  with  AUC  scores  as  low as 0.5.  We also observed that the mean f1 score between SimCLR-S2 and supervised models was the same.
 
 {{< figure src="/images/simclr-dist.png" caption="**Figure 4:** *Distribution of performance scores for SimCLR-S2 and supervised models*" >}}
