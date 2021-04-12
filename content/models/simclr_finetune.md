@@ -15,7 +15,7 @@ In this post, we will explore the second phase of the SimCLR methodology, fine-t
 
 We start the fine tuning step with 3 different SimCLR-S2 pretrained models. For each model, we perform supervised training with 6 different data sizes, each with 2 different class labeling schemes, giving us 36 experiments in all.
 
-Fine-tuning a pretrained model requires loading one of the three pretrained models, and freezing all but the last two layers in the projection head (aka fully connected layers). 
+Fine-tuning a pretrained model requires loading one of the three pretrained models, and freezing all but the last two layers in the projection head (aka fully connected layers).
 
 ## Datasets
 Since fine-tuning requires labels, all three pretrianed networks used a portion of the BigEarthNet-S2 dataset. As we mentioned in our EDA sections, there is a very small percentage of images labelled as irrigated, roughly 13.5 thousand images, and so care was taken when generating these split percentage datasets to incorporate an equal share of irrigated vs non-irrigated images. We also divide the percentage datasets into 70/15/15 train, validation and test splits, and image counts are shown in the following table:
@@ -23,11 +23,11 @@ Since fine-tuning requires labels, all three pretrianed networks used a portion 
 {{< figure src="/images/supervised_datasplit.jpg" >}}
 
 ## Comparisons
-Our fine tuning results showed that the SimCLR-S2 models performed on par or better than the supervised baseline models for the smaller data sizes. As shown below, performance of the supervised baseline models catches up and often surpasses our fine-tuned model at higher percent splits. 
+Our fine tuning results showed that the SimCLR-S2 models performed on par or better than the supervised baseline models for the smaller data sizes. As shown below, performance of the supervised baseline models catches up and often surpasses our fine-tuned model at higher percent splits.
 
 {{< figure src="/images/finetune_accuracy.png" caption="**Figure 1:** *Finetune accuracy for various models*" >}}
 
 
-{{< figure src="/images/finetune_accuracy.png" caption="**Figure 2:** *Finetune F1 Scores for various models*" >}}
+{{< figure src="/images/finetune_f1.png" caption="**Figure 2:** *Finetune F1 Scores for various models*" >}}
 
 
