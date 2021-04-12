@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div style="">
+  {{- if .Get "caption" -}}
+  <figure>
+    <select id="select{{ .Get "name" }}"> </select>
+    <p style="text-align: center; opacity: 0;" id="score{{ .Get "name" }}">Score:</p>
+    <div id="{{ .Get "name" }}"></div>
+    <figcaption>{{.Get "caption" | markdownify}}</figcaption>
+  </figure>
+  {{- else -}}
+  <select id="select{{ .Get "name" }}"> </select>
+  <p style="text-align: center; opacity: 0;" id="score{{ .Get "name" }}">Score:</p>
+  <div id="{{ .Get "name" }}"></div>
+  {{- end -}}
+</div>
+
+<script>
+  var elemWidth = document.getElementById("{{ .Get "name" }}").offsetWidth;
+
+  // set the dimensions and margins of the graph
+  var margin = {
+      top: 10,
+      right: 140,
+      bottom: 50,
+      left: 50
+    },
+    width = elemWidth - margin.left - margin.right,
+    height = (elemWidth * 0.6) - margin.top - margin.bottom;
+
+  // Parse the Data
+  d3.csv("{{- .Get "file" -}}", function(data) {
+    var score = d3.select("#score{{ .Get "name" }}")
+
+    // append the svg object to the body of the page
+    var svg = d3.select("#{{ .Get "name" }}")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+    // List of groups = species here = value of the first column called group -> I show them on the X axis
+    var allScores = d3.map(data, function(d) {
+      return (d.score_type)
+    }).keys()
+
+    // List of subgroups = header of the csv files = soil condition here
+    var subgroups = data.columns.slice(2)
+
+    // List of groups = species here = value of the first column called group -> I show them on the X axis
+    var groups = d3.map(data, function(d) {
+      return (d.percent_split)
+    }).keys()
+
+    // Add X axis
+    var x = d3.scaleBand()
+      .domain(groups)
+      .range([0, width])
+      .padding([0.2])
+    svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x).tickSize(0));
+
+    // Add Y axis
+    var y = d3.scaleLinear()
+      .domain([0, 1])
+      .range([height, 0]);
+    svg.append("g")
+      .call(d3.axisLeft(y));
+
+    // Another scale for subgroup position?
+    var xSubgroup = d3.scaleBand()
+      .domain(subgroups)
+      .range([0, x.bandwidth()])
+      .padding([0.05])
+
+    // color palette
+    color = d3.scaleOrdinal(d3.schemeCategory10)
+
+    var div = d3.select("body").append("div")
+      .attr("class", "tooltip-donut")
+      .style("opacity", 0);
+
+    var filterData = function(d) {
+      return d.filter(function(d) {
+        return d.score_type == allScores[0]
+      })
+    }
+
+    var mapData = function(d) {
+      return subgroups.map(function(key) {
+        return {
+          key: key,
+          value: d[key]
+        };
+      });
+    }
+
+    var selectedGroup = allScores[0];
+
+    var getData = function() {
+      var df = data.filter(function(d) {
+        return d.score_type == selectedGroup
+      });
+
+      var scores = [];
+      for (i = 0; i < df.length; i++) {
+        for (j = 0; j < subgroups.length; j++) {
+          var key = subgroups[j];
+          scores.push({ key: key, value: df[i][key] });
+        }
+      }
+
+      return scores;
+    };
+
+    // Show the bars
+    svg.append("g")
+      .selectAll("g")
+      // Enter in data = loop group per group
+      .data(filterData(data))
+      .enter()
+      .append("g")
+      .attr("transform", function(d) {
+        return "translate(" + x(d.percent_split) + ",0)";
+      })
+      .selectAll("rect")
+      .data(mapData)
+      .enter().append("rect")
+      .attr("class", "bar")
+      .on('mousemove', function(d, i) {
+        d3.select(this).transition()
+          .duration('50')
+          .attr('opacity', '.85');
+        div.transition()
+           .duration(50)
+           .style("opacity", 1);
+          console.log(score);
+        score.text("Score: " + d.value)
+             .style("opacity", 1);
+      })
+      .on('mouseout', function(d, i) {
+        d3.select(this).transition()
+          .duration('50')
+          .attr('opacity', '1');
+        score.transition()
+           .duration(50)
+           .style("opacity", 0);
+      })
+      .attr("x", function(d) {
+        return xSubgroup(d.key);
+      })
+      .attr("y", function(d) {
+        return y(d.value);
+      })
+      .attr("width", xSubgroup.bandwidth())
+      .attr("height", function(d) {
+        return height - y(d.value);
+      })
+      .attr("fill", function(d) {
+        return color(d.key);
+      });
+
+      {{- if .Get "x_label" -}}
+        svg.append("text")
+           .attr("transform",
+                 "translate(" + (width/2) + " ," +
+                                (height + margin.top + 20) + ")")
+           .style("text-anchor", "middle")
+       .text("{{ .Get "x_label" }}");
+      {{- end -}}
+
+      {{- if .Get "y_label" -}}
+      svg.append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 0 - margin.left)
+          .attr("x",0 - (height / 2))
+          .attr("dy", "1em")
+          .style("text-anchor", "middle")
+       .text("{{ .Get "y_label" }}");
+      {{- end -}}
+
+     var legend = svg.selectAll(".legend")
+         .data(subgroups.slice())
+         .enter().append("g")
+         .attr("class", "legend")
+         .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+     legend.append("rect")
+         .attr("x", width + 18)
+         .attr("width", 18)
+         .attr("height", 18)
+         .style("fill", color);
+
+     legend.append("text")
+         .attr("x", width + 40)
+         .attr("y", 9)
+         .attr("dy", ".35em")
+         .style("text-anchor", "start")
+         .text(function(d) { return d; });
+
+    // add the options to the button
+    d3.select("#select{{ .Get "name" }}")
+      .selectAll('myOptions')
+      .data(allScores)
+      .enter()
+      .append('option')
+      .text(function(d) {
+        return d;
+      }) // text showed in the menu
+      .attr("value", function(d) {
+        return d;
+      }) // corresponding value returned by the button
+
+    // A function that update the chart
+    function update() {
+      svg.selectAll(".bar")
+        .data(getData())
+        .transition().duration(1000)
+        .attr("x", function(d) {
+          return xSubgroup(d.key);
+        })
+        .attr("y", function(d) {
+          return y(d.value);
+        })
+        .attr("width", xSubgroup.bandwidth())
+        .attr("height", function(d) {
+          return height - y(d.value);
+        })
+        .attr("fill", function(d) {
+          return color(d.key);
+        });
+    }
+
+    // When the button is changed, run the updateChart function
+    d3.select("#select{{ .Get "name" }}").on("change", function(d) {
+      selectedGroup = d3.select(this).property("value")
+      update()
+    })
+
+  })
+</script>
