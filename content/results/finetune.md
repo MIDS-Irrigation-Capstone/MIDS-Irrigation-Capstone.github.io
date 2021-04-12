@@ -1,11 +1,10 @@
-
 ---
-title: "Overall Results"
+title: "SimCLR-S2 Fine-Tune Results"
 date: 2021-04-10
-featured_image: "/images/results_feature.jpg"
-description: Comparison of SimCLR-S2 to Supervised Baseline
-summary_image: "/images/results_final_summary.jpg"
-summary: Fine-tuning model results, training our three pretrained models in a supervised manor over various percentage splits of data.
+description: Summary of results for fine-tuning process.
+featured_image: "/images/farmland-simclr.jpg"
+summary_image: "/images/fine-tune.jpg"
+summary: Fine-tuning model results, training our three pretrained models in a supervised mannor over various percentage splits of data.
 ---
 
 
