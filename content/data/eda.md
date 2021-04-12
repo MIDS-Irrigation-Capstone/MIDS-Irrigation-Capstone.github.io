@@ -99,4 +99,4 @@ Every pixel in an image has a brightness level called luminance. This value rang
 
 Gamma factor less than 1 causes an image to be darker while a value greater than 1 causes an image to be brighter, as demonstrated by the images below.
 
-{{< figure src="/images/gamma_eg.png" caption="**Figure 12:** *Effects of gamma factor on brightness of an image*" >}}
+{{< figure src="/images/gamma_eg.png" caption="**Figure 13:** *Effects of gamma factor on brightness of an image*" >}}
