@@ -10,7 +10,7 @@ summary: The SimCLR-S2 pretraining uses completely unlabeled data and as the sta
 
 {{< figure src="/images/simclr-1.png" >}}
 
-In this post, we will explore the first phase of the SimCLR methodology, pretraining. As stated previously, pretraining leverages unlabeled data by performing a series of augmentations on a batch of images. With the augmented batch, we train a model to maximize the distance between the positive class, the pair derived from the same base, and all other images.
+In this post, we will explore the first phase of the SimCLR methodology, pretraining. As stated previously, pretraining leverages unlabeled data by performing a pair of augmentations on a batch of raw images. With the augmented batch, we train a model on a large task agnostic convolutional neural network to maximize the agreement between the images. The image pairs derived from the same base are said to attract each another while repel all other images in the batch.
 
 
 ## Augmentation Techniques
@@ -55,4 +55,3 @@ After all hyperparamter tuning experiments were completed, full training was con
 |Optimizer|adam|
 |Learning Rate|0.0005|
 {{< /table >}}
-
