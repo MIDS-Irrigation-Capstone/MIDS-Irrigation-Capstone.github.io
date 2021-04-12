@@ -13,3 +13,6 @@ summary: Fine-tuning model results, training our three pretrained models in a su
 {{< figure src="/images/finetune_accuracy.png" caption="**Figure 1:** *Finetune accuracy for various models*" >}}
 
 {{< figure src="/images/finetune_accuracy.png" caption="**Figure 2:** *Finetune F1 Scores for various models*" >}}
+
+
+{{< figure src="/images/fine_tune_acc_f1.png" caption="**Figure 3:** *SimCLR-S2 Fine tune performance for various models*" >}}
